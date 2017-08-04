@@ -9,5 +9,10 @@ namespace RockPaper
     class Player
     {
         private string name;
+
+        public Player()
+        {
+            //empty constructor for now
+        }
     }
 }
