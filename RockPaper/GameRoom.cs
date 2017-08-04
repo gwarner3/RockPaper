@@ -31,12 +31,11 @@ namespace RockPaper
         protected void CreateAIPlayer()
         {
             //code to create AI player
-            //add ai player to player list
+            Robot player2 = new Robot();
         }
         protected void CreateHumanPlayer()
         {
             //code to instantiate human player
-            //add human player to game list
         }
         public void StartGame()
         {

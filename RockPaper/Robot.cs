@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RockPaper
 {
-    public class AI : Player
+    public class Robot : Player
     {
 
-        public AI()
+        public Robot()
         {
-            this.name = "Robot";
+            this.name = "Player 2";
         }
         public override void MakeChoice()
         {
