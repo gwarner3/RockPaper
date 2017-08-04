@@ -19,6 +19,7 @@ namespace RockPaper
                 case "1":
                     //create one human and one robot player
                     CreateAIPlayer();
+                    Console.WriteLine("Key in Player 1 name (don't worry");
                     break;
                 case "2":
                     //create two human players
@@ -36,6 +37,8 @@ namespace RockPaper
         protected void CreateHumanPlayer()
         {
             //code to instantiate human player
+            Human player1 = new Human();
+            Human player2 = new Human();
         }
         public void StartGame()
         {
