@@ -18,6 +18,7 @@ namespace RockPaper
             {
                 case "1":
                     //create one human and one robot player
+                    CreateAIPlayer();
                     break;
                 case "2":
                     //create two human players
