@@ -8,15 +8,10 @@ namespace RockPaper
 {
     public abstract class Player
     {
-        private string name;
-        private int choiceIndex;
-        private List<int> choices = new List<int> {1,2,3,4,5};
-        private int score;
-
-        public Player()
-        {
-            //empty constructor for now
-        }
+        protected string name;
+        protected int choiceIndex;
+        protected List<int> choices = new List<int> {1,2,3,4,5};
+        protected int score;
 
         public abstract void MakeChoice();
     }
