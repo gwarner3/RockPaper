@@ -8,5 +8,6 @@ namespace RockPaper
 {
     class Player
     {
+        private string name;
     }
 }

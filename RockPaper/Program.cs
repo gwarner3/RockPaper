@@ -10,6 +10,8 @@ namespace RockPaper
     {
         static void Main(string[] args)
         {
+            GameRoom newGame = new GameRoom();
+            newGame.StartGame();
         }
     }
 }
