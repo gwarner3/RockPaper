@@ -44,9 +44,14 @@ namespace RockPaper
                 players[0].MakeChoice();
                 players[1].MakeChoice();
                 CompareChoices();
+                DisplayScore();
             }
             DisplayWinner();
             Console.ReadLine();
+        }
+        protected void DisplayScore()
+        {
+            Console.WriteLine($"Current Score:\n{players[0].name} score: {players[0].score}\n{players[1].name} score: {players[1].score}");
         }
         protected void DisplayWinner()
         {
