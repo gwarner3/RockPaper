@@ -15,7 +15,7 @@ namespace RockPaper
         protected List<string> choices = new List<string>() {"Empty String", "Rock", "Paper", "Scissor", "Spock", "Spock"};
         protected void GetGameType()
         {
-            Console.WriteLine("How do you want to play?\n1. You vs the computer\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
+            Console.WriteLine("How do you want to play?\n1. You vs the computer.\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
             string gameType = Console.ReadLine();
 
             switch (gameType)
@@ -63,7 +63,7 @@ namespace RockPaper
         {
             if (players[0].choice == players[1].choice)
             {
-                Console.WriteLine("Both chose the same thing. Press ENTER to continue.");
+                Console.WriteLine($"Both players chose {players[0].choice}. Press ENTER to continue.");
                 Console.ReadLine();
             }
             else if ((players[0].choice % 2 == 0 && players[1].choice % 2 == 0) || (players[0].choice % 2 != 0 && players[1].choice % 2 != 0))
@@ -80,12 +80,12 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[1].score += 1;
-                Console.WriteLine(player2.name + " chose " + choices[player2.choice] + "\n" + player1.name + " chose " + choices[player1.choice] + "\n"  + player2.name + " wins!");
+                Console.WriteLine($"{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} wins!");
             }
             else
             {
                 players[0].score += 1;
-                Console.WriteLine(player1.name + " chose " + choices[player1.choice] + "\n" + player2.name + " chose " + choices[player2.choice] + "\n" + player1.name + " wins!");
+                Console.WriteLine(players[0].name + " chose " + choices[player1.choice] + "\n" + players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " wins!");
             }
         }
 
@@ -94,12 +94,12 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[0].score += 1;
-                Console.WriteLine(player1.name + " chose " + choices[player1.choice] + " and won.");
+                Console.WriteLine(players[0].name + " chose " + choices[player1.choice] + "\n" + players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " wins!");
             }
             else
             {
                 players[1].score += 1;
-                Console.WriteLine(player2.name + " chose " + choices[player2.choice] + " and won.");
+                Console.WriteLine(players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " chose " + choices[players[0].choice] + "\n" + players[1].name + " wins!");
             }
         }
 
