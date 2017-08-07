@@ -47,6 +47,7 @@ namespace RockPaper
                 CompareChoices();
             }
             DisplayWinner();
+            Console.ReadLine();
         }
         protected void DisplayWinner()
         {
