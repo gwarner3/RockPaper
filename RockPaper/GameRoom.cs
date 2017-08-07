@@ -96,11 +96,11 @@ namespace RockPaper
         }
         protected void DisplayPlayer2Win()
         {
-            Console.WriteLine($"{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} wins!");
+            Console.WriteLine($"\n{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} wins!");
         }
         protected void DisplayPlayer1Win()
         {
-            Console.WriteLine($"{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} wins!");
+            Console.WriteLine($"\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} wins!");
         }
 
         protected void HigherScored()
