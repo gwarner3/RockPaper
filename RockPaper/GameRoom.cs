@@ -31,6 +31,8 @@ namespace RockPaper
                     players.Add(player2);
                     break;
                 default:
+                    Console.WriteLine("You did not choose a game type. Please try again.");
+                    GetGameType();
                     break;
             }
         }
