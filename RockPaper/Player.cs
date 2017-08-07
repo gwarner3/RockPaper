@@ -14,5 +14,7 @@ namespace RockPaper
 
         
         public abstract void MakeChoice();
+
+        public abstract void CreatePlayer();
     }
 }

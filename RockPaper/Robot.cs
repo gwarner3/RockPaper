@@ -11,12 +11,16 @@ namespace RockPaper
 
         public Robot()
         {
-            this.name = "Player 2";
+            
         }
         public override void MakeChoice()
         {
             Random robotChoice = new Random();
             choice = robotChoice.Next(1, 4);
+        }
+        public override void CreatePlayer()
+        {
+            this.name = "Player 2";
         }
     }
 }

@@ -8,11 +8,10 @@ namespace RockPaper
 {
     public class GameRoom
     {
-        protected Human player1 = new Human();
-        protected Human player2 = new Human();
-        protected Robot robotPlayer = new Robot();
+        protected Player player1;
+        protected Player player2;
         protected List<Player> players = new List<Player>();
-        protected List<string> choices = new List<string>() {"Empty String", "Rock", "Paper", "Scissor", "Spock", "Spock"};
+        protected List<string> choices = new List<string>() {"Invalid Option", "Rock", "Paper", "Scissor", "Spock", "Spock"};
         protected void GetGameType()
         {
             Console.WriteLine("How do you want to play?\n1. You vs the computer.\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
@@ -20,12 +19,17 @@ namespace RockPaper
 
             switch (gameType)
             {
-                case "1":                    
+                case "1":
+                    player1 = new Human();
+                    player2 = new Robot();          
                     player1.CreatePlayer();
+                    player2.CreatePlayer();
                     players.Add(player1);
-                    players.Add(robotPlayer);
+                    players.Add(player2);
                     break;
                 case "2":
+                    player1 = new Human();
+                    player2 = new Human();
                     player1.CreatePlayer();
                     player2.CreatePlayer();
                     players.Add(player1);
@@ -39,7 +43,7 @@ namespace RockPaper
         }
         public void MakeChoices()
         {
-            while (players[0].score <3 && players[1].score < 3)
+            while (players[0].score < 3 && players[1].score < 3)
             {
                 players[0].MakeChoice();
                 players[1].MakeChoice();
@@ -51,7 +55,7 @@ namespace RockPaper
         }
         protected void DisplayScore()
         {
-            Console.WriteLine($"Current Score:\n{players[0].name} score: {players[0].score}\n{players[1].name} score: {players[1].score}");
+            Console.WriteLine($"\nCurrent Score:\n{players[0].name} score: {players[0].score}\n{players[1].name} score: {players[1].score}");
         }
         protected void DisplayWinner()
         {
@@ -85,35 +89,30 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[1].score += 1;
-                DisplayPlayer2Win();                
+                DisplayWinner(1, 0);                
             }
             else
             {
                 players[0].score += 1;
-                DisplayPlayer1Win();
+                DisplayWinner(0, 1);
                 
             }
         }
-        protected void DisplayPlayer2Win()
+        protected void DisplayWinner(int index1, int index2)
         {
-            Console.WriteLine($"\n{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} wins!");
+            Console.WriteLine($"\n{players[index1].name} chose {choices[players[index1].choice]}\n{players[index2].name} chose {choices[players[index2].choice]}\n{players[index1].name} wins this round!");
         }
-        protected void DisplayPlayer1Win()
-        {
-            Console.WriteLine($"\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} wins!");
-        }
-
         protected void HigherScored()
         {
             if (players[0].choice > players[1].choice)
             {
                 players[0].score += 1;
-                DisplayPlayer1Win();                
+                DisplayWinner();                
             }
             else
             {
                 players[1].score += 1;
-                DisplayPlayer2Win();
+                DisplayWinner();
             }
         }
 

@@ -32,7 +32,7 @@ namespace RockPaper
                 MakeChoice();
             }
         }
-        public void CreatePlayer()
+        public override void CreatePlayer()
         {
             SetName();
         }
