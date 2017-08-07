@@ -50,14 +50,14 @@ namespace RockPaper
                 CompareChoices();
                 DisplayScore();
             }
-            DisplayWinner();
+            DisplayGameWinner();
             Console.ReadLine();
         }
         protected void DisplayScore()
         {
             Console.WriteLine($"\nCurrent Score:\n{players[0].name} score: {players[0].score}\n{players[1].name} score: {players[1].score}");
         }
-        protected void DisplayWinner()
+        protected void DisplayGameWinner()
         {
             if (players[0].score > players[1].score)
             {
@@ -89,16 +89,16 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[1].score += 1;
-                DisplayWinner(1, 0);                
+                DisplayRoundWinner(1, 0);                
             }
             else
             {
                 players[0].score += 1;
-                DisplayWinner(0, 1);
+                DisplayRoundWinner(0, 1);
                 
             }
         }
-        protected void DisplayWinner(int index1, int index2)
+        protected void DisplayRoundWinner(int index1, int index2)
         {
             Console.WriteLine($"\n{players[index1].name} chose {choices[players[index1].choice]}\n{players[index2].name} chose {choices[players[index2].choice]}\n{players[index1].name} wins this round!");
         }
@@ -107,12 +107,12 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[0].score += 1;
-                DisplayWinner();                
+                DisplayRoundWinner(0, 1);                
             }
             else
             {
                 players[1].score += 1;
-                DisplayWinner();
+                DisplayRoundWinner(1, 0);
             }
         }
 
