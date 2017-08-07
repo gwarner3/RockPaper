@@ -80,13 +80,22 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[1].score += 1;
-                Console.WriteLine($"{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} wins!");
+                DisplayPlayer2Win();                
             }
             else
             {
                 players[0].score += 1;
-                Console.WriteLine(players[0].name + " chose " + choices[player1.choice] + "\n" + players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " wins!");
+                DisplayPlayer1Win();
+                
             }
+        }
+        protected void DisplayPlayer2Win()
+        {
+            Console.WriteLine($"{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} wins!");
+        }
+        protected void DisplayPlayer1Win()
+        {
+            Console.WriteLine(players[0].name + " chose " + choices[player1.choice] + "\n" + players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " wins!");
         }
 
         protected void HigherScored()
@@ -94,12 +103,12 @@ namespace RockPaper
             if (players[0].choice > players[1].choice)
             {
                 players[0].score += 1;
-                Console.WriteLine(players[0].name + " chose " + choices[player1.choice] + "\n" + players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " wins!");
+                DisplayPlayer1Win();                
             }
             else
             {
                 players[1].score += 1;
-                Console.WriteLine(players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " chose " + choices[players[0].choice] + "\n" + players[1].name + " wins!");
+                DisplayPlayer2Win();
             }
         }
 
