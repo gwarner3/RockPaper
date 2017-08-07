@@ -52,11 +52,11 @@ namespace RockPaper
         {
             if (players[0].score > players[1].score)
             {
-                Console.WriteLine(players[0].name + " won.");
+                Console.WriteLine($"{players[0].name} wins the game.");
             }
             else
             {
-                Console.WriteLine(players[1].name + " won.");
+                Console.WriteLine($"{players[1].name} won.");
             }
         }
         protected void CompareChoices()
