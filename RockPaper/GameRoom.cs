@@ -56,7 +56,7 @@ namespace RockPaper
             }
             else
             {
-                Console.WriteLine($"{players[1].name} won.");
+                Console.WriteLine($"{players[1].name} wins the game.");
             }
         }
         protected void CompareChoices()
@@ -95,7 +95,7 @@ namespace RockPaper
         }
         protected void DisplayPlayer1Win()
         {
-            Console.WriteLine(players[0].name + " chose " + choices[player1.choice] + "\n" + players[1].name + " chose " + choices[players[1].choice] + "\n" + players[0].name + " wins!");
+            Console.WriteLine($"{players[0].name} chose {choices[players[0].choice]}\n{players[1].name} chose {choices[players[1].choice]}\n{players[0].name} wins!");
         }
 
         protected void HigherScored()
