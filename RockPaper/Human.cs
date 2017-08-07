@@ -8,14 +8,8 @@ namespace RockPaper
 {
     public class Human : Player
     {
-        //public Human()
-        //{
-        //    //empty constructor
-        //}
         protected void SetName()
         {
-            //code to name player
-            //get name of human player and place both in list
             Console.WriteLine("Key in Player 1 name and press ENTER.");
             name = Console.ReadLine();            
         }

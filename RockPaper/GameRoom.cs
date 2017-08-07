@@ -16,7 +16,6 @@ namespace RockPaper
         {
             Console.WriteLine("How do you want to play?\n1. You vs the computer\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
             string gameType = Console.ReadLine();
-            //Console.ReadLine();
 
             switch (gameType)
             {
@@ -26,20 +25,17 @@ namespace RockPaper
                     players.Add(robotPlayer);
                     break;
                 case "2":
-                    //Get name of both huan players and place both in list
                     player1.CreatePlayer();
                     player2.CreatePlayer();
                     players.Add(player1);
                     players.Add(player2);
                     break;
                 default:
-                    //send back to beginning of switch ctatement
                     break;
             }
         }
         public void MakeChoices()
         {
-            //while neither player has a score of 3
             while (players[0].score <3 && players[1].score < 3)
             {
                 players[0].MakeChoice();
@@ -69,14 +65,10 @@ namespace RockPaper
             }
             else if ((players[0].choice % 2 == 0 && players[1].choice % 2 == 0) || (players[0].choice % 2 != 0 && players[1].choice % 2 != 0))
             {
-                //both odd or both even, lower number wins
-                //put both choices in a list
-                //select the lowest of the two choices
                 LowerScored();
             }
             else if ((players[0].choice % 2 == 0 && players[1].choice % 2 != 0) || (players[0].choice % 2 != 0 && players[1].choice % 2 == 0))
             {
-                //one odd and other is even, higher number wins
                 HigherScored();
             }
         }

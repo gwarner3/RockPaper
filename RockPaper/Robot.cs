@@ -16,7 +16,6 @@ namespace RockPaper
         public override void MakeChoice()
         {
             Random robotChoice = new Random();
-            //choiceIndex = choice.Next(0, 4);
             choice = robotChoice.Next(1, 4);
         }
     }
