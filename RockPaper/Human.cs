@@ -21,8 +21,8 @@ namespace RockPaper
         }
         public override void MakeChoice()
         {
-            Console.WriteLine("Choose one and press ENTER:\n1. Rock\n2. Paper\n 3. Scissors\n4. Spock\n5. Lizard");
-            Console.ReadLine();
+            Console.WriteLine("Choose one and press ENTER:\n1. Rock\n2. Paper\n3. Scissors\n4. Spock\n5. Lizard");
+            choice = int.Parse(Console.ReadLine());
         }
         public void CreatePlayer()
         {

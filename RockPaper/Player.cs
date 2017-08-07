@@ -9,8 +9,10 @@ namespace RockPaper
     public abstract class Player
     {
         protected string name;
-        protected int score;        
+        public int score;
+        protected int choice;
 
+        
         public abstract void MakeChoice();
     }
 }

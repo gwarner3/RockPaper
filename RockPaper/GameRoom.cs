@@ -11,7 +11,7 @@ namespace RockPaper
         protected Human player1 = new Human();
         protected Human player2 = new Human();
         protected Robot robotPlayer = new Robot();
-        protected List<Player> players;
+        protected List<Player> players = new List<Player>();
         protected void GetGameType()
         {
             Console.WriteLine("How do you want to play?\n1. You vs the computer\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
@@ -24,7 +24,6 @@ namespace RockPaper
                     player1.CreatePlayer();
                     players.Add(player1);
                     players.Add(robotPlayer);
-                    Console.ReadLine();
                     break;
                 case "2":
                     //Get name of both huan players and place both in list
@@ -40,12 +39,23 @@ namespace RockPaper
         }
         public void MakeChoices()
         {
-            
+            //while neither player has a score of 3
+            while (players[0].score <= 3 && players[1].score <=3)
+            {
+                players[0].MakeChoice();
+                players[1].MakeChoice();
+            }
+
+        }
+        protected void SetScore()
+        {
+
         }
 
         public void StartGame()
         {
             GetGameType();
+            MakeChoices();
         }
     }
 }
