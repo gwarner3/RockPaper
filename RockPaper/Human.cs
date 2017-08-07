@@ -10,12 +10,12 @@ namespace RockPaper
     {
         protected void SetName()
         {
-            Console.WriteLine("Key in Player 1 name and press ENTER.");
+            Console.WriteLine("\nKey in Player name and press ENTER.");
             name = Console.ReadLine();            
         }
         public override void MakeChoice()
         {
-            Console.WriteLine("Choose one and press ENTER:\n1. Rock\n2. Paper\n3. Scissors\n4. Spock\n5. Lizard");
+            Console.WriteLine("\nChoose one and press ENTER:\n1. Rock\n2. Paper\n3. Scissors\n4. Spock\n5. Lizard");
             try
             {
                 choice = int.Parse(Console.ReadLine());
