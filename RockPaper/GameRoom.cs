@@ -8,6 +8,10 @@ namespace RockPaper
 {
     public class GameRoom
     {
+        protected Human player1 = new Human();
+        protected Human player2 = new Human();
+        protected Robot robotPlayer = new Robot();
+        protected List<Player> players;
         protected void GetGameType()
         {
             Console.WriteLine("How do you want to play?\n1. You vs the computer\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
@@ -16,30 +20,29 @@ namespace RockPaper
 
             switch (gameType)
             {
-                case "1":
-                    //create one human and one robot player
-                    CreateAIPlayer();
-                    Console.WriteLine("Key in Player 1 name (don't worry");
+                case "1":                    
+                    player1.CreatePlayer();
+                    players.Add(player1);
+                    players.Add(robotPlayer);
+                    Console.ReadLine();
                     break;
                 case "2":
-                    //create two human players
+                    //Get name of both huan players and place both in list
+                    player1.CreatePlayer();
+                    player2.CreatePlayer();
+                    players.Add(player1);
+                    players.Add(player2);
                     break;
                 default:
                     //send back to beginning of switch ctatement
                     break;
             }
         }
-        protected void CreateAIPlayer()
+        public void MakeChoices()
         {
-            //code to create AI player
-            Robot player2 = new Robot();
+            
         }
-        protected void CreateHumanPlayer()
-        {
-            //code to instantiate human player
-            Human player1 = new Human();
-            Human player2 = new Human();
-        }
+
         public void StartGame()
         {
             GetGameType();
