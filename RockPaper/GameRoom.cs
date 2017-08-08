@@ -11,7 +11,7 @@ namespace RockPaper
         protected Player player1;
         protected Player player2;
         protected List<Player> players = new List<Player>();
-        protected List<string> choices = new List<string>() {"Invalid Option", "Rock", "Paper", "Scissor", "Spock", "Spock"};
+        protected List<string> choices = new List<string>() {"Invalid Option", "Rock", "Paper", "Scissor", "Spock", "Lizard"};
         protected void GetGameType()
         {
             Console.WriteLine("How do you want to play?\n1. You vs the computer.\n2. You vs another human.\nType 1 or 2 and press ENTER to choose.");
